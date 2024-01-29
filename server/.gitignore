@@ -1,0 +1,6 @@
+.vs/
+bin/
+obj/
+Properties/
+appsettings*
+audio-mixer-server.csproj.user
