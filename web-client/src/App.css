@@ -1,0 +1,19 @@
+.rc-slider-vertical {
+  width: 30px;
+  height: 90svh;
+}
+.sliders {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100svh;
+  width: 100vw;
+}
+.rc-slider-rail.rc-slider-rail.rc-slider-rail, .rc-slider-track.rc-slider-track.rc-slider-track, .rc-slider-step.rc-slider-step.rc-slider-step {
+  width: 30px;
+}
+
+.rc-slider-handle.rc-slider-handle.rc-slider-handle {
+  height: 40px;
+  width: 40px;
+}
