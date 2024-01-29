@@ -1,10 +1,26 @@
 using AudioSwitcherFace;
 using MixerTypes;
 using System.Data;
+using System.Net;
+
+var mixer = new Mixer();
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy => {
+        policy.AllowAnyOrigin();
+        policy.AllowAnyMethod();
+        policy.AllowAnyHeader();
+    });
+});
+builder.WebHost.ConfigureKestrel((context, serverOptions) =>
+{
+    serverOptions.Listen(IPAddress.Any, 5000, listenOptions => {});
+});
+
 var app = builder.Build();
-var mixer = new Mixer();
+app.UseCors();
 
 app.MapGet("/sessions/", () => mixer.GetSessions());
 

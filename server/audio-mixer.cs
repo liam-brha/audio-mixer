@@ -16,7 +16,6 @@ namespace AudioSwitcherFace
         private static IAudioSessionController GetAudioProcesses()
         {
             CoreAudioDevice device = new CoreAudioController().DefaultPlaybackDevice;
-            Console.WriteLine(device);
             IAudioSessionController sessionCtrl = device.GetCapability<IAudioSessionController>();
             return sessionCtrl;
         }
